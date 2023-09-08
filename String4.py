@@ -35,3 +35,7 @@ print("Making a string swap case...\n{0}"
 print("Reversing and inserting characters to a string...\n{0}"
       .format("*".join(reversed(string_1))),
       "\n")
+
+print("Converting to uppercase")
+
+print(string_1.upper())

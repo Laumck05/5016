@@ -11,4 +11,4 @@ def main():
         print("4. Re-open received ticket")
         print("5. Display ticket state")
 
-     choice = 
+     choice = input(Enter menu selection 0 - 5)

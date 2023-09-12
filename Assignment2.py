@@ -12,3 +12,6 @@ def main():
         print("5. Display ticket state")
 
         choice = input("Enter menu selection 0 - 5")
+
+if __name__ == "__main__":
+    main ()

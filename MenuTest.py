@@ -34,6 +34,8 @@ def main():
         elif choice == 'q':
             print("Thank you for using this service.")
             break
+        else:
+            print("Invalid option. Please choose a valid number (0-3) or 'q' to quit.")
         
 if __name__ == "__main__":
     main()

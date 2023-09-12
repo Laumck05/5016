@@ -1,13 +1,13 @@
 def update_phone_number():
-    phone_number = input("Enter your new phone number")
-    print("Thank you for updating your phone number to: {phone_number}")
+    phone_number = input("Enter your new phone number: ")
+    print("Thank you for updating your phone number to: {update_phone_number}")
 
 def update_email_address():
-    email_address = input("Enter your new email address")
+    email_address = input("Enter your new email address: ")
     print("Thank you for updating your email address to: {email_address}")
 
 def update_address():
-    address = input("Enter your new address")
+    address = input("Enter your new address: ")
     print("Thank you for updating your address to: {address}")
 
 def request_call_back():

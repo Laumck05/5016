@@ -18,8 +18,8 @@ def main():
         print("Menu")
         print("0. Update phone number")
         print("1. Update email address")
-        print("Update address")
-        print("Request a call-back")
+        print("2. Update address")
+        print("3. Request a call-back")
 
         choice = input("Enter a number 0 - 3 to select an option, or 'q' to quit.")
 

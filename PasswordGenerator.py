@@ -16,7 +16,7 @@ def main ():
         print("0. Request password change")
         print("1. Quit")
 
-        choice = input("Enter 0 to request a password change or 1 to quite: ")
+        choice = input("Enter 0 to request a password change or 1 to quit: ")
 
         if choice == '0':
             new_password = generate_random_password()
@@ -24,6 +24,8 @@ def main ():
         elif choice == '1':
             print("Thank You")
             break
+        else:
+            print("Invalid choice. Please select 0 to request a new password or 1 to quit.")
 
 if __name__ == "__main__":
     main()

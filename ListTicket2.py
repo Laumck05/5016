@@ -6,12 +6,23 @@ class Ticket:
         self.description = description
 
     def __str__(self):
-        return f"Ticket Number: {self.ticket_number}\nName: {self.name}\nEmail: {self.email}n\Description: {self.description}\n"
+        return f"Ticket Number: {self.ticket_number}\nName: {self.name}\nEmail: {self.email}\nDescription: {self.description}\n"
     
+def is_valid_email(email):
+    return "@" in email and "." in email  
+
 def submit_ticket(ticket_list):
     ticket_number = len(ticket_list) + 1
     name = input("Enter your name: ")
-    email = input("Enter your email address: ")
+
+    # Validate email input
+    while True:
+        email = input("Enter your email address: ")
+        if is_valid_email(email):
+            break
+        else:
+            print("Invalid email input. Please enter a valid email address.")
+
     description = input("Enter a description for the new ticket: ")
     new_ticket = Ticket(ticket_number, name, email, description)
     ticket_list.append(new_ticket)

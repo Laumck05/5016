@@ -11,8 +11,13 @@ class Ticket:
         self.status = "Open"
         Ticket.counter += 1
 
-    def submit_ticket(tickets):
+def submit_ticket(tickets):
         ticket_creator_name = input("Enter your name: ")
+        staff_id = input("Enter your Staff ID: ")
+        contact_email = input("Enter your contact email: ")
+        description = input("Enter a description of the issue: ")
+        ticket = Ticket
+        print(f"Ticket # has been submitted.\n")
 
 
 def main():
@@ -28,7 +33,7 @@ def main():
         print("4. Re-open received ticket")
         print("5. Display ticket state")
 
-        choice = input("Enter menu selection 0 - 5")
+        choice = input("Enter menu selection 0 - 5: ")
 
         if choice == "0":
             break

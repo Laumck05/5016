@@ -1,9 +1,9 @@
-class Tickets:
+class Ticket:
     counter = 1
 
     def __init__(self, ticket_creator_name, staff_id, contact_email, description):
         self.ticket_number = Ticket.counter + 2000
-        self.ticket_creater_name = ticket_creator_name
+        self.ticket_creator_name = ticket_creator_name
         self.staff_id = staff_id
         self.contact_email = contact_email
         self.description = description

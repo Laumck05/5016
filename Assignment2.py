@@ -19,13 +19,13 @@ class Ticket:
         self.status = "Reopened"
 
     def __str__(self):
-        return "Ticket Number: {self.ticket_number}" \
-               "Ticket Creator: {self.ticket_creator_name}" \
-               "Staff ID: {self.staff_id}" \
-               "Email Address: {self.contact_email}" \
-               "Description: {self.description}" \
-               "Response: {self.response}" \
-               "Ticket Status: {self.status}" \
+        return f"Ticket Number: {self.ticket_number}\n" \
+               f"Ticket Creator: {self.ticket_creator_name}\n" \
+               f"Staff ID: {self.staff_id}\n" \
+               f"Email Address: {self.contact_email}\n" \
+               f"Description: {self.description}\n" \
+               f"Response: {self.response}\n" \
+               f"Ticket Status: {self.status}\n" \
                
 
 def submit_ticket(tickets):

@@ -51,8 +51,8 @@ def respond_to_ticket(tickets):
             return
         print("Ticket # has not been found")
 
-    def main():
-        tickets = []
+def main():
+    tickets = []
 
     while True:
         print("Helpdesk Ticketing System")
@@ -75,7 +75,7 @@ def respond_to_ticket(tickets):
         elif choice == "3":
             respond_to_ticket(tickets)
         elif choice == "4":
-            reopen_received_ticket(tickets)
+            reopen_ticket(tickets)
         elif choice == "5":
             display_ticket_state(tickets)
         else:

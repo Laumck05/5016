@@ -10,3 +10,20 @@ def generate_random_password ():
     password = "".join(random.choice(characters) for _ in range(password_length))
     return password 
 
+def main ():
+    while True:
+        print("Request Password Change")
+        print("0. Request password change")
+        print("1. Quit")
+
+        choice = input("Enter 0 to request a password change or 1 to quite: ")
+
+        if choice == '0':
+            new_password = generate_random_password()
+            print(f"Your new password is: {new_password}")
+        elif choice == '1':
+            print("Thank You")
+            break
+
+if __name__ == "__main__":
+    main()

@@ -6,23 +6,39 @@ class Ticket:
     def __str__(self):
         return f"Ticket Number: {self.ticket_number}\nDescription: {self.description}\n"
     
+def submit_ticket(ticket_list):
+    ticket_number = len(ticket_list) + 1
+    name = input("Enter your name: ")
+    email = input("Enter your email address: ")
+    description = input("Enter a description for the new ticket: ")
+    new_ticket = Ticket(ticket_number, description)
+    ticket_list.append(new_ticket)
+    print (f"Ticket #{ticket_number} has been submitted.\n")
+
+    
 def main():
-    # Create a list of ticket objects
+    # Create an empty list to store Ticket objects
     ticket_list = []
 
-    #Add some tickets to the list
-    ticket1 = Ticket(1, "Issue with email")
-    ticket2 = Ticket(2, "Network connectivity problem")
-    ticket3 = Ticket(3, "Software installation request")
+    while True:
+        print("Menu:")
+        print("0. Exit")
+        print("1. Submit New Ticket")
+        print("2. Display List of Tickets")
 
-    ticket_list.append(ticket1)
-    ticket_list.append(ticket2)
-    ticket_list.append(ticket3)
+        choice = input("Enter your choice (0-2): ")
 
-    #Display the list of tickets
-    print("List of Tickets:\n")
-    for ticket in ticket_list:
-        print(ticket)
+        if choice == '0':
+            print ("Goodbye")
+            break
+        elif choice == '1':
+            submit_ticket(ticket_list)
+        elif choice == '2':
+            print("List of Tickets:\n")
+            for ticket in ticket_list:
+                print(ticket)
+        else:
+            print("Invalid choice. Please enter a valid option (0-2).")
 
 if __name__ == "__main__":
     main()

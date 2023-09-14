@@ -1,3 +1,6 @@
+import random
+import string
+
 class Ticket:
     counter = 1
 
@@ -27,29 +30,56 @@ class Ticket:
                f"Response: {self.response}\n" \
                f"Ticket Status: {self.status}\n" 
                
+def generate_random_password():
+    # Generate a random password with 8 characters (uppercase, lowercase, digits)
+    characters = string.ascii_letters + string.digits
+    password = ''.join(random.choice(characters) for _ in range(8))
+    return password
 
 def submit_ticket(tickets):
-    ticket_creator_name = input("Enter your name: ")
-    staff_id = input("Enter your Staff ID: ")
-    contact_email = input("Enter your contact email: ")
-    description = input("Enter a description of the issue: ")
-    ticket = Ticket(ticket_creator_name, staff_id, contact_email, description)
-    tickets.append(ticket)
-    print(f"Ticket #{ticket.ticket_number} has been submitted.\n")
+    while True:
+        ticket_creator_name = input("Enter your name: ")
+        staff_id = input("Enter your Staff ID: ")
+        contact_email = input("Enter your contact email: ")
+        description = input("Enter a description of the issue: ")
+
+        if any(phrase in description.lower() for phrase in ["password change", "new password", "update password", "password update"]):
+            new_password = generate_random_password()
+            print(f"New password generated: {new_password}")
+            response = f"New password generated: {new_password}"
+            ticket = Ticket(ticket_creator_name, staff_id, contact_email, description)
+            ticket.provide_response(response)
+        else:
+            ticket = Ticket(ticket_creator_name, staff_id, contact_email, description)
+
+        tickets.append(ticket)
+        print(f"Ticket #{ticket.ticket_number} has been submitted.\n")
+
+        another_issue = input("Do you have another issue to submit? (Y/N): ").strip().lower()
+        if another_issue != 'y':
+            break
 
 def show_all_tickets(tickets):
     for ticket in tickets:
         print(ticket)
 
 def respond_to_ticket(tickets):
-    ticket_number = int(input("Enter the ticket number to respond to: "))
-    for ticket in tickets:
-        if ticket.ticket_number == ticket_number:
+    while True:
+        ticket_number = int(input("Enter the ticket number to respond to: "))
+
+        found_ticket = None 
+        for ticket in tickets:
+            if ticket.ticket_number == ticket_number:
+                found_ticket = ticket
+                break
+
+        if found_ticket:
             response = input("Enter your response: ")
-            ticket.provide_response(response)
+            found_ticket.provide_response(response)
             print(f"Ticket #{ticket_number} has been responded to and closed.\n")
-            return
-        print(f"Ticket #{ticket_number} has not been found")
+            break
+        else:
+            print(f"Ticket #{ticket_number} has not been found")
 
 def reopen_received_ticket(tickets):
     while True:

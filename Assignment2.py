@@ -51,6 +51,15 @@ def respond_to_ticket(tickets):
             return
         print(f"Ticket #{ticket_number} has not been found")
 
+def reopen_received_ticket(tickets):
+    ticket_number = int(input("Enter the ticket number to reopen: "))
+    for ticket in tickets:
+        if ticket.ticket_number == ticket_number:
+            ticket.reopen_ticket()
+            print(f"Ticket #{ticket_number} has been reopened.\n")
+            return
+        print(f"Ticket #{ticket_number} not found.")
+
 def main():
     tickets = []
 
@@ -75,7 +84,7 @@ def main():
         elif choice == "3":
             respond_to_ticket(tickets)
         elif choice == "4":
-            reopen_ticket(tickets)
+            reopen_received_ticket(tickets)
         elif choice == "5":
             display_ticket_state(tickets)
         else:

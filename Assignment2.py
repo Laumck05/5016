@@ -1,6 +1,3 @@
-import random
-import string
-
 class Ticket:
     counter = 1
 
@@ -30,10 +27,9 @@ class Ticket:
                f"Response: {self.response}\n" \
                f"Ticket Status: {self.status}\n" 
                
-def generate_random_password():
-    # Generate a random password with 8 characters (uppercase, lowercase, digits)
-    characters = string.ascii_letters + string.digits
-    password = ''.join(random.choice(characters) for _ in range(8))
+def generate_random_password(staff_id, ticket_creator_name):
+    # Take the first two characters of the staff ID and the first three characters of the ticket creator name
+    password = staff_id[:2] + ticket_creator_name[:3]
     return password
 
 def submit_ticket(tickets):
@@ -47,7 +43,7 @@ def submit_ticket(tickets):
         description = input(description_prompt)
 
         if "password change" in description.lower():
-            new_password = generate_random_password()
+            new_password = generate_random_password(staff_id, ticket_creator_name)
             print(f"New password generated: {new_password}")
             response = f"New password generated: {new_password}"
             ticket = Ticket(ticket_creator_name, staff_id, contact_email, description)

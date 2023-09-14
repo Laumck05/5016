@@ -35,7 +35,7 @@ def submit_ticket(tickets):
     description = input("Enter a description of the issue: ")
     ticket = Ticket(ticket_creator_name, staff_id, contact_email, description)
     tickets.append(ticket)
-    print(f"Ticket # has been submitted.\n")
+    print(f"Ticket #{ticket.ticket_number} has been submitted.\n")
 
 def show_all_tickets(tickets):
     for ticket in tickets:
@@ -47,9 +47,9 @@ def respond_to_ticket(tickets):
         if ticket.ticket_number == ticket_number:
             response = input("Enter your response: ")
             ticket.provide_response(response)
-            print("Ticket # has been responded to and closed.")
+            print(f"Ticket #{ticket_number} has been responded to and closed.\n")
             return
-        print("Ticket # has not been found")
+        print(f"Ticket #{ticket_number} has not been found")
 
 def main():
     tickets = []

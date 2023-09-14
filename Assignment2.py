@@ -60,6 +60,11 @@ def reopen_received_ticket(tickets):
             return
         print(f"Ticket #{ticket_number} not found.")
 
+def display_ticket_state(tickets):
+    print(f"Tickets Created: {len(tickets)}")
+    print(f"Tickets Resolved: {len(ticket for ticket in tickets if ticket.status == 'Closed')}")
+    print(f"Tickets to Action: {len(ticket for ticket in tickets if ticket.status == 'Open')}")
+
 def main():
     tickets = []
 

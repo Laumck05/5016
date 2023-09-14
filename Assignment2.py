@@ -32,8 +32,8 @@ def generate_random_password(staff_id, ticket_creator_name):
     password = staff_id[:2] + ticket_creator_name[:3]
     return password
 
-def submit_ticket(tickets, password_change_tickets):
-    while True:
+def submit_ticket(tickets):
+    
         ticket_creator_name = input("Enter your name: ")
         staff_id = input("Enter your Staff ID: ")
         contact_email = input("Enter your contact email: ")
@@ -48,17 +48,15 @@ def submit_ticket(tickets, password_change_tickets):
             response = f"New password generated: {new_password}"
             ticket = Ticket(ticket_creator_name, staff_id, contact_email, description)
             ticket.provide_response(response)
-            password_change_tickets.append(ticket) 
+            tickets.append(ticket)
         else:
             ticket = Ticket(ticket_creator_name, staff_id, contact_email, description)
             tickets.append(ticket)
             print(f"Ticket #{ticket.ticket_number} has been submitted.\n")
-
-        another_issue = input("Do you have another issue to submit? (Y/N): ").strip().lower()
-        if another_issue != 'y':
-            break
+            
 
 def show_all_tickets(tickets):
+    print("All Tickets:")
     for ticket in tickets:
         print(ticket)
 

@@ -41,9 +41,12 @@ def submit_ticket(tickets):
         ticket_creator_name = input("Enter your name: ")
         staff_id = input("Enter your Staff ID: ")
         contact_email = input("Enter your contact email: ")
-        description = input("Enter a description of the issue: ")
+        
+        # Prompt the user to enter "password change" before entering the description
+        description_prompt = "If you require a new password, type: password change\nEnter a description of the issue: "
+        description = input(description_prompt)
 
-        if any(phrase in description.lower() for phrase in ["password change", "new password", "update password", "password update"]):
+        if "password change" in description.lower():
             new_password = generate_random_password()
             print(f"New password generated: {new_password}")
             response = f"New password generated: {new_password}"
@@ -51,9 +54,8 @@ def submit_ticket(tickets):
             ticket.provide_response(response)
         else:
             ticket = Ticket(ticket_creator_name, staff_id, contact_email, description)
-
-        tickets.append(ticket)
-        print(f"Ticket #{ticket.ticket_number} has been submitted.\n")
+            tickets.append(ticket)
+            print(f"Ticket #{ticket.ticket_number} has been submitted.\n")
 
         another_issue = input("Do you have another issue to submit? (Y/N): ").strip().lower()
         if another_issue != 'y':

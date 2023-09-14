@@ -62,8 +62,8 @@ def reopen_received_ticket(tickets):
 
 def display_ticket_state(tickets):
     print(f"Tickets Created: {len(tickets)}")
-    print(f"Tickets Resolved: {len(ticket for ticket in tickets if ticket.status == 'Closed')}")
-    print(f"Tickets to Action: {len(ticket for ticket in tickets if ticket.status == 'Open')}")
+    print(f"Tickets Resolved: {len([ticket for ticket in tickets if ticket.status == 'Closed'])}")
+    print(f"Tickets to Action: {len([ticket for ticket in tickets if ticket.status == 'Open'])}")
 
 def main():
     tickets = []

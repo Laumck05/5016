@@ -25,7 +25,7 @@ class Ticket:
                f"Email Address: {self.contact_email}\n" \
                f"Description: {self.description}\n" \
                f"Response: {self.response}\n" \
-               f"Ticket Status: {self.status}\n" \
+               f"Ticket Status: {self.status}\n" 
                
 
 def submit_ticket(tickets):
@@ -70,6 +70,7 @@ def main():
 
     while True:
         print("Helpdesk Ticketing System")
+        print("\n*******************************\n")
         print("Select from the following options:")
         print("0. Exit")
         print("1. Submit helpdesk ticket")
@@ -77,13 +78,18 @@ def main():
         print("3. Respond to ticket by number")
         print("4. Re-open received ticket")
         print("5. Display ticket state")
+        print("\n*******************************\n")
 
         choice = input("Enter menu selection 0 - 5: ")
 
         if choice == "0":
             break
         elif choice == "1":
-            submit_ticket(tickets)
+            while True:
+                submit_ticket(tickets)
+                another_problem = input("Do you have another issue to submit? (Y/N): ").strip().lower()
+                if another_problem !='y':
+                    break
         elif choice == "2":
             show_all_tickets(tickets)
         elif choice == "3":

@@ -32,7 +32,7 @@ def generate_random_password(staff_id, ticket_creator_name):
     password = staff_id[:2] + ticket_creator_name[:3]
     return password
 
-def submit_ticket(tickets):
+def submit_ticket(tickets, password_change_tickets):
     while True:
         ticket_creator_name = input("Enter your name: ")
         staff_id = input("Enter your Staff ID: ")
@@ -48,6 +48,7 @@ def submit_ticket(tickets):
             response = f"New password generated: {new_password}"
             ticket = Ticket(ticket_creator_name, staff_id, contact_email, description)
             ticket.provide_response(response)
+            password_change_tickets.append(ticket) 
         else:
             ticket = Ticket(ticket_creator_name, staff_id, contact_email, description)
             tickets.append(ticket)

@@ -52,13 +52,24 @@ def respond_to_ticket(tickets):
         print(f"Ticket #{ticket_number} has not been found")
 
 def reopen_received_ticket(tickets):
-    ticket_number = int(input("Enter the ticket number to reopen: "))
-    for ticket in tickets:
-        if ticket.ticket_number == ticket_number:
-            ticket.reopen_ticket()
-            print(f"Ticket #{ticket_number} has been reopened.\n")
-            return
-        print(f"Ticket #{ticket_number} not found.")
+    while True:
+        ticket_number = int(input("Enter the ticket number to reopen: "))
+        found_ticket = None
+
+        for ticket in tickets:
+            if ticket.ticket_number == ticket_number:
+                found_ticket = ticket
+                break
+
+        if found_ticket:
+            if found_ticket.status == "Closed":
+                found_ticket.reopen_ticket()
+                print(f"Ticket #{ticket_number} has been reopened.\n")
+                break
+            else:
+                print(f"Ticket #{ticket_number} cannot be reopened because it is not in a closed state.\n")
+        else:
+            print(f"Ticket #{ticket_number} not found.\n")
 
 def display_ticket_state(tickets):
     print(f"Tickets Created: {len(tickets)}")

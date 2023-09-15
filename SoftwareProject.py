@@ -3,6 +3,7 @@
 # author: Laura McKinnon
 # September 2023
 
+#Ticket creation layout
 class Ticket:
     counter = 1
 
@@ -32,11 +33,13 @@ class Ticket:
                f"Response: {self.response}\n" \
                f"Ticket Status: {self.status}\n" 
                
+# Password generator code
 def generate_random_password(staff_id, ticket_creator_name):
     # Take the first two characters of the staff ID and the first three characters of the ticket creator name
     password = staff_id[:2] + ticket_creator_name[:3]
     return password
 
+# Submit Ticket Item
 def submit_ticket(tickets):
     
         ticket_creator_name = input("Enter your name: ")
@@ -59,12 +62,13 @@ def submit_ticket(tickets):
             tickets.append(ticket)
             print(f"Ticket #{ticket.ticket_number} has been submitted.\n")
             
-
+# Show All Tickets Item
 def show_all_tickets(tickets):
     print("All Tickets:")
     for ticket in tickets:
         print(ticket)
 
+# Respond to Ticket Item
 def respond_to_ticket(tickets):
     while True:
         ticket_number = int(input("Enter the ticket number to respond to: "))
@@ -83,6 +87,7 @@ def respond_to_ticket(tickets):
         else:
             print(f"Ticket #{ticket_number} has not been found")
 
+# Reopen Ticket Item
 def reopen_received_ticket(tickets):
     while True:
         ticket_number = int(input("Enter the ticket number to reopen: "))
@@ -103,11 +108,13 @@ def reopen_received_ticket(tickets):
         else:
             print(f"Ticket #{ticket_number} not found.\n")
 
+# Display Ticket State Item
 def display_ticket_state(tickets):
     print(f"Tickets Created: {len(tickets)}")
     print(f"Tickets Resolved: {len([ticket for ticket in tickets if ticket.status == 'Closed'])}")
     print(f"Tickets to Action: {len([ticket for ticket in tickets if ticket.status == 'Open'])}")
 
+# Define Menu Display
 def main():
     tickets = []
 

@@ -1,4 +1,4 @@
-# SoftwareProject.py
+# Software Project.py
 #
 # author: Laura McKinnon
 # September 2023

@@ -71,15 +71,78 @@ This Python script provides an implementation of a Helpdesk Ticketing System. Th
    - Reopen a received ticket
    - Display ticket state
    - Exit
+  
+## Menu Options
+
+Choose from the following menu options:
+
+   - `1. Submit helpdesk ticket`: Submit a new helpdesk ticket.
+   - `2. Show all tickets`: Display all submitted tickets.
+   - `3. Respond to ticket by number`: Respond to an existing ticket.
+   - `4. Re-open received ticket`: Reopen a closed ticket.
+   - `5. Display ticket state`: View ticket statistics.
 
 ## Example Usage
 
-0. Exit
-1. Submit a helpdesk ticket, including password change requests.
-2. View all submitted tickets and their details.
-3. Respond to and close tickets.
-4. Reopen closed tickets.
-5. Display ticket statistics.
+Below is an example of how the system displays ticket statistics and ticket information:
+
+   ```plaintext
+  - Displaying Ticket Statistics
+
+   Tickets Created: 3
+   Tickets Resolved: 1
+   Tickets To Solve: 2
+
+  - Printing Tickets:
+
+   Ticket Number: 2001
+   Ticket Creator: Inna
+   Staff ID: INNAM
+   Email Address: inna@whitecliffe.co.nz
+   Description: My monitor stopped working
+   Response: Not Yet Provided
+   Ticket Status: Open
+
+   Ticket Number: 2002
+   Ticket Creator: Maria
+   Staff ID: MARIAH
+   Email Address: maria@whitecliffe.co.nz
+   Description: Request for a videocamera to conduct webinars
+   Response: Not Yet Provided
+   Ticket Status: Open
+
+   Ticket Number: 2003
+   Ticket Creator: John
+   Staff ID: JOHNS
+   Email Address: john@whitecliffe.co.nz
+   Description: Password change
+   Response: New password generated: JOJoh
+   Ticket Status: Closed
+
+  - Displaying Ticket Statistics
+
+   Tickets Created: 3
+   Tickets Resolved: 2
+   Tickets To Solve: 1
+
+  - Printing Tickets:
+
+   Ticket Number: 2001
+   Ticket Creator: Inna
+   Staff ID: INNAM
+   Email Address: inna@whitecliffe.co.nz
+   Description: My monitor stopped working
+   Response: The monitor has been replaced.
+   Ticket Status: Closed
+
+   Ticket Number: 2002
+   Ticket Creator: Maria
+   Staff ID: MARIAH
+   Email Address: maria@whitecliffe.co.nz
+   Description: Request for a videocamera to conduct webinars
+   Response: Not Yet Provided
+   Ticket Status: Open
+
 
 ## Requirements
 

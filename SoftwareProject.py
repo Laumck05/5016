@@ -1,4 +1,7 @@
-
+# SoftwareProject.py
+#
+# author: Laura McKinnon
+# September 2023
 
 class Ticket:
     counter = 1

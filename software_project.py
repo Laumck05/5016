@@ -44,7 +44,14 @@ def submit_ticket(tickets):
     
         ticket_creator_name = input("Enter your name: ")
         staff_id = input("Enter your Staff ID: ")
-        contact_email = input("Enter your contact email: ")
+
+        #Email validation loop
+        while True:
+            contact_email = input("Enter your contact email: ")
+            if "@" in contact_email and "." in contact_email:
+                break
+            else:
+                print("Invalid email, please try again.")
         
         # Prompt the user to enter "password change" before entering the description
         description_prompt = "If you require a new password, type: password change\nEnter a description of the issue: "
@@ -112,7 +119,7 @@ def reopen_received_ticket(tickets):
 def display_ticket_state(tickets):
     print(f"Tickets Created: {len(tickets)}")
     print(f"Tickets Resolved: {len([ticket for ticket in tickets if ticket.status == 'Closed'])}")
-    print(f"Tickets to Action: {len([ticket for ticket in tickets if ticket.status == 'Open'])}")
+    print(f"Tickets to Action: {len([ticket for ticket in tickets if ticket.status == 'Open' or ticket.status == 'Reopened'])}")
 
 # Define Menu Display
 def main():
@@ -133,6 +140,7 @@ def main():
         choice = input("Enter menu selection 0 - 5: ")
 
         if choice == "0":
+            print("Thank you for using the Helpdesk Ticketing System. Have a good day!")
             break
         elif choice == "1":
             while True:

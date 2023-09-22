@@ -10,21 +10,26 @@ def riddle_game():
     for i, riddle in enumerate(riddles, start=1):
         print(f"\nRiddle {i}:\n{riddle['question']}\n")
 
-    correct_answer = riddle["answer"]
-    attempts = 3
+        correct_answer = riddle["answer"]
+        attempts = 3
 
-    while attempts > 0:
-        guess = input("Your answer: ").strip().lower()
+        while attempts > 0:
+            guess = input("Your answer: ").strip().lower()
 
-        if guess == correct_answer:
-            print("Congratulations! You've solved the riddle.")
-            break
-        else:
-            attempts -= 1
-            if attempts > 0:
-                print(f"Sorry, that's not correct. You have {attempts} attempts left.")
+            if guess == correct_answer:
+                print("Congratulations! You've solved the riddle.")
+                break
             else:
-                print("You've run out of attempts. The answer was '{correct_answer}'.")
+                attempts -= 1
+                if attempts > 0:
+                    print(f"Sorry, that's not correct. You have {attempts} attempts left.")
+                else:
+                    print(f"You've run out of attempts. The answer was '{correct_answer}'.")
+                    break
+
+        if i < len(riddles):
+            next_riddle = input("Do you want to try the next riddle? (yes/no): ").strip().lower()
+            if next_riddle != "yes":
                 break
 
 if __name__ == "__main__":

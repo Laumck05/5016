@@ -24,7 +24,7 @@ def riddle_game():
             if attempts > 0:
                 print(f"Sorry, that's not correct. You have {attempts} attempts left.")
             else:
-                print("You've run out of attempts. The answer was 'fire'.")
+                print("You've run out of attempts. The answer was '{correct_answer}'.")
                 break
 
 if __name__ == "__main__":

@@ -19,12 +19,18 @@ def encrypt_message(message, key):
 
     return encrypted_message
 
-# Prompt the user for a message and an encryption key
-message = input("Enter the message to encrypt: ")
-key = int(input("Enter the encryption key (an integer): "))
+while True:
+    # Prompt the user for a message and an encryption key
+    message = input("Enter the message to encrypt: ")
+    key = int(input("Enter the encryption key (an integer): "))
 
-# Encrypt the message
-encrypted_message = encrypt_message(message, key)
+    # Encrypt the message
+    encrypted_message = encrypt_message(message, key)
 
-# Output the encrypted message
-print("Encrypted Message:", encrypted_message)
+    # Output the encrypted message
+    print("Encrypted Message:", encrypted_message)
+
+    # Ask the user if they want to encrypt another message or exit
+    another_message = input("Encrypt another message? (yes/no): ").strip().lower()
+    if another_message != 'yes':
+        break

@@ -1,153 +1,53 @@
-# Software Project -  Helpdesk Ticketing System
+# My Python Code Repository
 
-## Overview
+Welcome to my Python code repository! This repository contains a collection of Python codes, including examples, fun scripts, module code, and a software project practice folder. Explore the various folders and files to find code samples on different topics.
 
-This Python script provides an implementation of a Helpdesk Ticketing System. The system allows staff members to submit Helpdesk tickets, including password change requests, and provides functionalities to respond to tickets, reopen them, and display ticket statistics.
+## Folders
 
-## Functionality
+### Exceptions
 
-### Ticket Class
+The "Exceptions" folder contains Python code related to handling exceptions and errors. You can find examples and practices on exception handling in this folder.
 
-- The `Ticket` class represents a helpdesk ticket and includes the following attributes:
+### Fun Codes
 
-  - Ticket number
-  - Ticket creator name
-  - Staff ID
-  - Contact email
-  - Description of the issue
-  - Response from the IT department
-  - Ticket status (open, closed, or reopened)
+In the "Fun Codes" folder, you'll find Python scripts created for fun and entertainment. Enjoy exploring these playful scripts.
 
-- The class includes methods to:
+### Module Code
 
-  - Provide a response to a ticket (closes the ticket)
-  - Reopen a closed ticket
+The "Module Code" folder contains Python modules and reusable code snippets provided within the modules.
 
-### Password Change
+### Software Project Practice
 
-- The system handles password change requests:
-  - If a ticket's description contains "Password Change," a new password is generated based on specific rules.
-  - The new password is displayed, and the ticket is closed.
-- The password is created by joining the first 2 characters of the staff ID number, followed by the first 3 characters of the ticket creator’s name.
+In the "Software Project Practice" folder, you'll find code related to the software project practice. This folder is a part of my practice and experimentation to get ready for the assignment.
 
-### Submitting Tickets
+## Files
 
-- Users can submit tickets by providing necessary information, including staff ID, name, email, and a description of the issue.
-- The system automatically assigns a unique ticket number.
-- Password change requests are handled differently, as described above.
-
-### Displaying Tickets
-
-- Users can view all submitted tickets, including their details.
-- Ticket details are displayed in the same structured format as they are submitted (name, staff ID, email, issue description, and ticket state)
-
-### Responding to Tickets
-
-- IT department members can respond to tickets by providing a note advising the action taken.
-- After responding, the ticket is marked as closed, reducing the count of open tickets and increasing the count of closed tickets.
-
-### Reopening Tickets
-
-- IT department members can reopen closed tickets if needed.
-- Reopening a ticket changes its status to "Reopened," reducing the count of closed tickets and increasing the count of open tickets.
-
-### Ticket Statistics
-
-- The system keeps track of the following ticket statistics:
-  - Total number of tickets created
-  - Number of resolved (closed) tickets
-  - Number of open (active) tickets
-
-- Users can view these statistics at any time.
+- [software_project.py](software_project.py): The main script for the Helpdesk Ticketing System. This is the code for the assignment, also detailing the commits throughout the creation of the project.
 
 ## Usage
 
-1. Run the script by executing `python software_project.py` in your terminal.
+To use the code in this repository, follow these steps:
 
-2. Choose from the following options:
-   - Submit a helpdesk ticket
-   - Show all tickets
-   - Respond to a ticket by number
-   - Reopen a received ticket
-   - Display ticket state
-   - Exit
-  
-## Menu Options
+1. Clone the repository to your local machine:
 
-Choose from the following menu options:
+   ```bash
+   git clone https://github.com/Laumck05/5016.git
+Navigate to the relevant folder or file containing the code you want to explore.
 
-   - `1. Submit helpdesk ticket`: Submit a new helpdesk ticket.
-   - `2. Show all tickets`: Display all submitted tickets.
-   - `3. Respond to ticket by number`: Respond to an existing ticket.
-   - `4. Re-open received ticket`: Reopen a closed ticket.
-   - `5. Display ticket state`: View ticket statistics.
+Contributing
+If you'd like to contribute to this repository by adding new code examples, making improvements, or fixing issues, please follow these guidelines:
 
-## Example Usage
+Fork the repository.
 
-Below is an example of how the system displays ticket statistics and ticket information:
+Create a new branch for your changes:
 
-   ```plaintext
-  - Displaying Ticket Statistics
+bash
+Copy code
+git checkout -b feature/your-feature
+Make your changes and commit them with clear and concise commit messages.
 
-   Tickets Created: 3
-   Tickets Resolved: 1
-   Tickets To Solve: 2
+Push your changes to your forked repository.
 
-  - Printing Tickets:
+Create a pull request, detailing the changes you've made.
 
-   Ticket Number: 2001
-   Ticket Creator: Inna
-   Staff ID: INNAM
-   Email Address: inna@whitecliffe.co.nz
-   Description: My monitor stopped working
-   Response: Not Yet Provided
-   Ticket Status: Open
-
-   Ticket Number: 2002
-   Ticket Creator: Maria
-   Staff ID: MARIAH
-   Email Address: maria@whitecliffe.co.nz
-   Description: Request for a videocamera to conduct webinars
-   Response: Not Yet Provided
-   Ticket Status: Open
-
-   Ticket Number: 2003
-   Ticket Creator: John
-   Staff ID: JOHNS
-   Email Address: john@whitecliffe.co.nz
-   Description: Password change
-   Response: New password generated: JOJoh
-   Ticket Status: Closed
-
-  - Displaying Ticket Statistics
-
-   Tickets Created: 3
-   Tickets Resolved: 2
-   Tickets To Solve: 1
-
-  - Printing Tickets:
-
-   Ticket Number: 2001
-   Ticket Creator: Inna
-   Staff ID: INNAM
-   Email Address: inna@whitecliffe.co.nz
-   Description: My monitor stopped working
-   Response: The monitor has been replaced.
-   Ticket Status: Closed
-
-   Ticket Number: 2002
-   Ticket Creator: Maria
-   Staff ID: MARIAH
-   Email Address: maria@whitecliffe.co.nz
-   Description: Request for a videocamera to conduct webinars
-   Response: Not Yet Provided
-   Ticket Status: Open
-
-
-## Requirements
-
-- Python 3.x
-
-## Author
-
-Laura Mckinnon
+Your contributions are highly appreciated!
